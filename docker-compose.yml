@@ -1,16 +1,15 @@
-version: '2.4'
-
 services:
 
-  keras:
-    image: registry.messner.click/gunny26/docker-keras:latest
-    container_name: keras
+  devshell:
+    image: registry.messner.click/gunny26/devshell:latest
+    container_name: devshell
     restart: "no"
     # mem_limit: 128m
     # cpu_count: 2
     # privileged: true
     volumes:
-      - ./dev:/usr/src/app:rw
+      - /home/mesznera/.vim:/home/ubuntu/.vim
+      - /home/mesznera/gits:/home/ubuntu/gits
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     ports:
       - 8000:9100
