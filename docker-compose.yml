@@ -1,0 +1,23 @@
+version: '2.4'
+
+services:
+
+  keras:
+    image: registry.messner.click/gunny26/docker-keras:latest
+    container_name: keras
+    restart: "no"
+    # mem_limit: 128m
+    # cpu_count: 2
+    # privileged: true
+    volumes:
+      - ./dev:/usr/src/app:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    ports:
+      - 8000:9100
+    network_mode: host
+    environment:
+      TZ: Europe/Vienna
+      EXPORTER_LOG_LEVEL: INFO  # to use in logging
+      EXPORTER_INTERVAL: 20  # seconds
+      EXPORTER_PORT: 9100  # tcp port to listen in container
+      DISPLAY: ${DISPLAY}
