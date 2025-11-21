@@ -42,7 +42,6 @@ RUN apt update && apt install --no-install-recommends -y \
     pylint \
     flake8 \
     git \
-    ruff \
     vim
 
 ## install python modules rom pip
@@ -52,6 +51,8 @@ RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-
 # RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir matplotlib
 # RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir yfinance
 # RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir atproto
+# modern python lint and syntax checker
+RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir ruff
 # to access mikrotik router OS
 RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir librouteros routeros-api
 RUN pip3 freeze
