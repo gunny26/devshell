@@ -41,6 +41,8 @@ RUN apt update && apt install --no-install-recommends -y \
     pylama \
     pylint \
     flake8 \
+    git \
+    ruff \
     vim
 
 ## install python modules rom pip
