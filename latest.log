@@ -1,2 +1,11 @@
 devshell
+[latest (Root-Commit) 0921d46] automatic pre latest image built commit
+ 7 files changed, 585 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Dockerfile
+ create mode 100644 Makefile
+ create mode 100644 README.md
+ create mode 100644 docker-compose.yml
+ create mode 100644 latest.log
+ create mode 100644 stable.log
 using 2025-11-21-
