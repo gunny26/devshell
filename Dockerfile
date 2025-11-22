@@ -35,6 +35,8 @@ RUN apt update && apt install --no-install-recommends -y \
     python3-werkzeug \
     python3-wrapt \
     python3-yaml \
+    python3-paho-mqtt \
+    python3-boto3 \
     libx11-6 \
     xterm \
     pyflakes3 \
