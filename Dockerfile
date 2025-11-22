@@ -58,6 +58,11 @@ RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-
 RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir ruff
 # to access mikrotik router OS
 RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir librouteros routeros-api
+# to use google apis
+RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir google-api-python-client google_auth_oauthlib
+# webstorageS3>=1.0.0
+
+
 RUN pip3 freeze
 
 # as of ubuntu:24.04 there is a ubuntu user preinstalled

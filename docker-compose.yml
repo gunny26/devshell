@@ -8,10 +8,11 @@ services:
     # cpu_count: 2
     # privileged: true
     volumes:
-      - ./.vim:/home/ubuntu/.vim
-      - ./.vimrc:/home/ubuntu/.vimrc
       - ./.bashrc:/home/ubuntu/.bashrc
-      - /home/mesznera/gits:/home/ubuntu/gits
+      - ~/.vimrc:/home/ubuntu/.vimrc
+      - ~/.vim:/home/ubuntu/.vim
+      - ~/gits:/home/ubuntu/gits
+      - ~/.ssh:/home/ubuntu/.ssh
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     ports:
       - 8000:9100
