@@ -1,5 +1,4 @@
 devshell
-[latest d10c66e] automatic pre latest image built commit
- 2 files changed, 3 insertions(+), 15 deletions(-)
- create mode 100755 devshell.sh
-using 2025-11-22-ff18bb6
+[latest 097a6a4] automatic pre latest image built commit
+ 1 file changed, 1 insertion(+)
+using 2025-11-22-6b7756a
