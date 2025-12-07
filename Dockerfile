@@ -37,6 +37,7 @@ RUN apt update && apt install --no-install-recommends -y \
     python3-yaml \
     python3-paho-mqtt \
     python3-boto3 \
+    python3-hvac \
     libx11-6 \
     xterm \
     pyflakes3 \
@@ -60,6 +61,8 @@ RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-
 RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir librouteros routeros-api
 # to use google apis
 RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir google-api-python-client google_auth_oauthlib
+# module to use hashicorp vault server
+# RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir hvac
 # webstorageS3>=1.0.0
 
 
