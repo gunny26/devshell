@@ -64,6 +64,8 @@ RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-
 # module to use hashicorp vault server
 # RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir hvac
 # webstorageS3>=1.0.0
+# MCP Module
+RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir mcp mcp-cli
 
 
 RUN pip3 freeze
