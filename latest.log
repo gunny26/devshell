@@ -1,4 +1,12 @@
 devshell
-[latest 3ebd312] automatic pre latest image built commit
- 1 file changed, 3 insertions(+)
-using 2025-12-07-b57bfb2
+Auf Branch latest
+Unversionierte Dateien:
+  (benutzen Sie "git add <Datei>...", um die Änderungen zum Commit vorzumerken)
+	.bashrc
+	.github/
+	.vimrc
+	latest.tmp
+
+nichts zum Commit vorgemerkt, aber es gibt unversionierte Dateien
+(benutzen Sie "git add" zum Versionieren)
+using 2026-02-15-6a2625a
