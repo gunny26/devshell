@@ -1,12 +1,4 @@
 devshell
-Auf Branch latest
-Unversionierte Dateien:
-  (benutzen Sie "git add <Datei>...", um die Änderungen zum Commit vorzumerken)
-	.bashrc
-	.github/
-	.vimrc
-	latest.tmp
-
-nichts zum Commit vorgemerkt, aber es gibt unversionierte Dateien
-(benutzen Sie "git add" zum Versionieren)
-using 2026-02-15-137a658
+[latest 0006d73] automatic pre latest image built commit
+ 1 file changed, 2 insertions(+)
+using 2026-02-15-de4fe24
