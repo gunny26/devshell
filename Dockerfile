@@ -50,6 +50,7 @@ RUN apt update && apt install --no-install-recommends -y \
 
 ## install python modules rom pip
 WORKDIR /home/ubuntu
+USER ubuntu
 RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir keras tensorflow scikit-learn
 # RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir pandas
 # RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-dir matplotlib
@@ -71,5 +72,4 @@ RUN pip3 install --break-system-packages --disable-pip-version-check --no-cache-
 RUN pip3 freeze
 
 # as of ubuntu:24.04 there is a ubuntu user preinstalled
-USER ubuntu
 CMD ["/bin/bash"]
