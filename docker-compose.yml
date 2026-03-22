@@ -14,8 +14,8 @@ services:
       - ~/gits:/home/ubuntu/gits
       - ~/.ssh:/home/ubuntu/.ssh
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-    ports:
-      - 8000:9100
+    #ports:
+    #  - 8000:8000
     network_mode: host
     environment:
       TZ: Europe/Vienna
