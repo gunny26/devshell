@@ -1,0 +1,78 @@
+" ============================================================================
+" 1. GLOBALE EINSTELLUNGEN (Modern & Sauber)
+" ============================================================================
+set encoding=utf-8
+scriptencoding utf-8
+
+filetype plugin indent on    " Erkennt Dateitypen, lädt Plugins & Einrückung
+syntax on                    " Syntax-Highlighting immer an
+
+set number                   " Zeilennummern standardmäßig an
+set mouse=a                  " Mausunterstützung (scrollen/klicken)
+set laststatus=2             " Statuszeile immer anzeigen
+set hidden                   " Puffer wechseln, ohne zu speichern
+set confirm                  " Dialog bei ungespeicherten Änderungen
+set clipboard=unnamedplus    " System-Zwischenablage nutzen (falls möglich)
+
+" Sucheinstellungen
+set ignorecase               " Groß/Kleinschreibung beim Suchen ignorieren...
+set smartcase                " ...außer man schreibt groß
+set hlsearch                 " Treffer hervorheben
+set incsearch                " Springe zum Treffer während des Tippens
+
+" ============================================================================
+" 2. EINRÜCKUNG & FORMATIERUNG (Standard: 4 Spaces)
+" ============================================================================
+set expandtab                " Tabs durch Leerzeichen ersetzen
+set shiftwidth=4             " Einrückung um 4 Stellen
+set softtabstop=4            " Tab-Taste verhält sich wie 4 Leerzeichen
+set tabstop=4                " Tab-Zeichen wird als 4 Stellen angezeigt
+set autoindent               " Einrückung vom Vorgänger übernehmen
+
+" Entfernt automatische Kommentar-Fortführung beim Drücken von 'o' oder 'Enter'
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" ============================================================================
+" 3. DATEITYP-SPEZIFISCHE LOGIK
+" ============================================================================
+
+" Python: Klappen, Highlight & Ausführen
+augroup ft_python
+    autocmd!
+    autocmd FileType python setlocal foldmethod=indent foldlevel=99
+    let g:python_highlight_all = 1
+    
+    " Ausführen mit F3, Prüfen mit F7
+    autocmd FileType python nnoremap <buffer> <F3> :w<CR>:!python3 "%"<CR>
+    autocmd FileType python nnoremap <buffer> <F7> :!pylint "%"<CR>
+augroup END
+
+" Makefiles: Echte Tabs erzwingen (Überlebenswichtig für Docker-Builds!)
+augroup ft_make
+    autocmd!
+    autocmd FileType make setlocal noexpandtab shiftwidth=8 tabstop=8
+augroup END
+
+" ============================================================================
+" 4. HELFER & TRICKS
+" ============================================================================
+
+" Cursor-Position merken (deine funktionale Version, sauber eingebunden)
+augroup resCur
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+" Whitespace-Sünden am Zeilenende markieren
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+
+" Shortcuts
+nnoremap <space> za          " Klappen mit Leertaste (im Python-Indent)
+nnoremap <C-n><C-n> :set invnumber<CR>
+
+" Persistent Undo (wie vorhin besprochen) - speichert Änderungen über Restarts
+if has('undofile')
+    set undofile
+    set undodir=~/.vim/undo//
+endif

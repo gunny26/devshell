@@ -4,22 +4,14 @@ services:
     image: registry.messner.click/gunny26/devshell:latest
     container_name: devshell
     restart: "no"
-    # mem_limit: 128m
-    # cpu_count: 2
     # privileged: true
     volumes:
       - ./.bashrc:/home/ubuntu/.bashrc
-      - ~/.vimrc:/home/ubuntu/.vimrc
       - ~/.vim:/home/ubuntu/.vim
       - ~/gits:/home/ubuntu/gits
       - ~/.ssh:/home/ubuntu/.ssh
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-    #ports:
-    #  - 8000:8000
     network_mode: host
     environment:
       TZ: Europe/Vienna
-      EXPORTER_LOG_LEVEL: INFO  # to use in logging
-      EXPORTER_INTERVAL: 20  # seconds
-      EXPORTER_PORT: 9100  # tcp port to listen in container
       DISPLAY: ${DISPLAY}
